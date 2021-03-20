@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ClimbFinder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- bulma -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+</head>
+<body>
+  <section class="section">
+    <div class="level">
+      <div class="level-left">
+        <h1 class="title is-1">ClimbFinder</h1>
+      </div>
+      <div class="level-right">
+        <img src="mountain-project-logo.jpg">
+      </div>
+    </div>
+    <div class="columns">
+      <div class="column is-two-thirds">
+        <div class="level">
+          <div class="level-left column">
+            <form>
+              <h3 class="title is-5">Find climbs around location of your choice</h3>
+              <div class="field">
+                <div class="control">
+                  <input class="input" id="lat" type="text" placeholder="Latitude">
+                </div>
+                <p class="help">Ex: 44.148257</p>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input class="input" id="lon" type="text" placeholder="Longitude">
+                </div>
+                <p class="help">Ex: -74.370470</p>
+              </div>
+              <div class="field">
+                <div class="control">
+                  <input class="input" id="radius" type="text" placeholder="Radius">
+                </div>
+                <p class="help" id="errorfield">Distance from point to search for climbs (miles, max 200)</p>
+              </div>
+              <div class="field is-grouped">
+                <div class="control">
+                  <button class="button is-link" id="findclimbs">Find Climbs Near Here</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class='column'>
+            <h3 class="title is-5">...or find climbs near your current location</h3>
+            <div class="control">
+              <button class="button is-link" id="findclimbsforyou">Find Climbs Near You</button>
+            </div>
+          </div>
+        </div>
+        <h3 class="title is-3" id="maptitle"></h3>
+        <div style="width:800px;height:500px"; id="map">
+        </div>
+      </div>
+      <div class="column">
+        <font size="1">
+          <table class="table is-bordered">
+            <thead>
+              <tr>
+                <th>Route Name</th>
+                <th>Rating</th>
+                <th>Location</th>
+              </tr>
+            </thead>
+            <tbody id="climblist">
+            </tbody>
+          </table>
+        </font>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDg_RSUsRYY-P6fltwkLpJFTB3P9hwwfHg"></script>
+  <script src="app.js"></script> 
+</body>
+</html>
